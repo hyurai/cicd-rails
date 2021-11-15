@@ -14,8 +14,9 @@ jobs:
     service:
     container:
       image: ruby:2.5.1
+      
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 
 
       # Add or Replace any other Linters here
