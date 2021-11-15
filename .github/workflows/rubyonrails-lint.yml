@@ -12,15 +12,17 @@ jobs:
   run-lint:
     runs-on: ubuntu-latest
     
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
     container:
       image: ruby:2.5.1
     
-    - name: SetUp Rails
-      run: bundle install
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: SetUp Rails
+        run: bundle install
+        
+
+    
     
 
       # Add or Replace any other Linters here
