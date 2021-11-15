@@ -22,10 +22,10 @@ jobs:
         uses: actions/cache@v1
         with:
           path: .vendor
-          key: bundle-v1-${{ hasFiles('**/Gemfile.lock')}}
+          key: bundle-v1-${{ hashFiles('**/bundle.lock') }}
           restore-keys: |
-              bundle-v1-${{ hasFiles('**/Gemfile.lock')}}
-              
+              bundle-v1-${{ hashFiles('**/bundle.lock') }}
+            
       - name: Save Chae
         if: steps.cache.outputs.cache-hit != 'true'
         run: bundle install
