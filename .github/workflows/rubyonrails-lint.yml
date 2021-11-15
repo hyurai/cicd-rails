@@ -7,13 +7,14 @@ name: Rails - Install dependencies and run linters
 
 on:
   push:
-    branches: [ main ]
+  
 jobs:
   run-lint:
     runs-on: ubuntu-latest
     service:
     container:
       image: ruby:2.5.1
+      
       
       
     steps:
