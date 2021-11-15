@@ -17,10 +17,11 @@ jobs:
         ruby-version: ['2.5.1']
     
     steps:
-      - name: Bundler install
-        run:  gem install bundler -v 1.17.3
+     
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Bundler install
+        run:  gem install bundler -v 1.17.3
       - name: Restore bundle
         uses: actions/cache@v1
         with:
