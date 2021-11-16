@@ -29,6 +29,11 @@ RSpec.describe "/tweets", type: :request do
               get tweet_path tweet2.id
               expect(response).to have_http_status(200)
           end
+          
+          it 'Titleが表示されていること' do
+              get tweet_path tweet2.id
+              expect(response.body).to include "aa"
+          end
       
       end
       
