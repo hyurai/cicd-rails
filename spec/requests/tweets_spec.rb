@@ -19,4 +19,24 @@ RSpec.describe "/tweets", type: :request do
         expect(response).to have_http_status(200)
     end
   end
+  describe '/tweets/:id' do
+      
+      context 'idがある場合' do
+          let(:tweet2) {FactoryBot.create :tweet2}
+      
+      
+          it 'リクエストが成功すること' do
+              get tweet_path tweet2.id
+              expect(response).to have_http_status(200)
+          end
+          
+          it 'Titleが表示されていること' do
+              get tweet_path tweet2.id
+              expect(response.body).to include "aa"
+          end
+      
+      end
+      
+    
+  end
 end
